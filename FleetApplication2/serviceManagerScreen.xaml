@@ -1,0 +1,44 @@
+﻿<Window x:Class="FleetApplication2.serviceManagerScreen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FleetApplication2"
+        mc:Ignorable="d"
+        xmlns:materialDesign ="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="serviceManagerScreen" Height="370" Width="700" WindowStyle="None" ResizeMode="NoResize">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20*"/>
+            <ColumnDefinition Width="73*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid x:Name="topBar" MouseDown="topBar_MouseDown" Background="#FF094168" Grid.ColumnSpan="2">
+            <!--<Image Source="/Assets/error.png"/>-->
+            <materialDesign:PackIcon x:Name="closeButton" Kind="Close" Width="25" Height="25" Margin="6" VerticalAlignment="Center" HorizontalAlignment="Right" Foreground="White" Cursor="Hand" MouseDown="closeButton_MouseDown"/>
+            <materialDesign:PackIcon x:Name="minimizeButton" Kind="WindowMinimize" Width="23" Height="23" VerticalAlignment="Center" HorizontalAlignment="Right" Foreground="White" Margin="0,0,34,0" MouseDown="minimizeButton_MouseDown" Cursor="Hand">
+
+            </materialDesign:PackIcon>
+        </Grid>
+        <Grid Grid.Row="1" >
+            <ListView Background="#FF5494D4" Margin="0" BorderThickness="0">
+                <ListViewItem x:Name="vehiclesButton" Height="60" MouseEnter="vehiclesButton_MouseEnter" MouseLeave="vehiclesButton_MouseLeave" Margin="0" BorderThickness="0">
+                    <StackPanel Orientation="Horizontal" Margin="0,0,-2,0">
+                        <TextBlock Text="Vehicle" VerticalAlignment="Center" Margin="20 10" Foreground="Black"></TextBlock>
+                    </StackPanel>
+                </ListViewItem>
+                <ListViewItem x:Name="reportsButton" Height="60" MouseEnter="reportsButton_MouseEnter" MouseLeave="reportsButton_MouseLeave" BorderThickness="0">
+                    <StackPanel Orientation="Horizontal" Margin="0,0,-2,0">
+                        <TextBlock Text="Reports" VerticalAlignment="Center" Margin="20 10" Foreground="Black"></TextBlock>
+                    </StackPanel>
+                </ListViewItem>
+            </ListView>
+        </Grid>
+        <Grid x:Name="smWindow" Grid.Column="1" Grid.Row="2" Background="White">
+            
+        </Grid>
+    </Grid>
+</Window>
